@@ -1,0 +1,16 @@
+version: "3.4"
+services:
+  web:
+    build: .
+    image: go-fiber-ticketing
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      DB_HOST: host.docker.internal
+      DB_PORT: 3306
+      DB_PASS: A123b456c
+      DB_NAME: ticketing
+      DB_USER: root
+      PORT: 30001
+      ENVIRONMENT: production
+    container_name: go-fiber-ticketing
