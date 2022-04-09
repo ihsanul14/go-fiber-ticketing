@@ -1,6 +1,7 @@
 package usecase
 
 import (
+	"errors"
 	"fmt"
 	repo "go-fiber-ticketing/checkout/repository"
 	mdl "go-fiber-ticketing/models/checkout"
@@ -16,10 +17,10 @@ type UsecaseModul struct {
 
 type Usecase interface {
 	ReadData(ctx *fasthttp.RequestCtx, request *mdl.Request) (res mdl.ResponseAll, err error)
-	CreateData(ctx *fasthttp.RequestCtx, request *mdl.Request) (res mdl.ResponseAll, err error)
-	UpdateData(ctx *fasthttp.RequestCtx, request *mdl.Request) (res mdl.ResponseAll, err error)
+	CreateData(ctx *fasthttp.RequestCtx, request *mdl.CreateRequest) (res mdl.ResponseAll, err error)
 	DeleteData(ctx *fasthttp.RequestCtx, request *mdl.Request) (res mdl.ResponseAll, err error)
-	ReadSummaryData(ctx *fasthttp.RequestCtx, request *mdl.Request) (res mdl.ResponseAll, err error)
+	ReadSummaryData(ctx *fasthttp.RequestCtx, request *mdl.Request) (res mdl.ResponseSummaryAll, err error)
+	Payment(ctx *fasthttp.RequestCtx, request *mdl.Request) (res mdl.ResponseAll, err error)
 }
 
 func NewUsecase(u repo.Repository, logger *logrus.Logger) Usecase {
@@ -35,21 +36,11 @@ func (u UsecaseModul) ReadData(ctx *fasthttp.RequestCtx, param *mdl.Request) (md
 	return res, err
 }
 
-func (u *UsecaseModul) CreateData(ctx *fasthttp.RequestCtx, param *mdl.Request) (mdl.ResponseAll, error) {
+func (u *UsecaseModul) CreateData(ctx *fasthttp.RequestCtx, param *mdl.CreateRequest) (mdl.ResponseAll, error) {
 	var res mdl.ResponseAll
 	err := u.Repo.CreateData(ctx, param)
 	if err != nil {
 		u.logger.Error(fmt.Sprintf("usecase.usecase.CreateData: %v", err.Error()))
-		return res, err
-	}
-	return res, err
-}
-
-func (u *UsecaseModul) UpdateData(ctx *fasthttp.RequestCtx, param *mdl.Request) (mdl.ResponseAll, error) {
-	var res mdl.ResponseAll
-	err := u.Repo.UpdateData(ctx, param)
-	if err != nil {
-		u.logger.Error(fmt.Sprintf("usecase.usecase.UpdateData: %v", err.Error()))
 		return res, err
 	}
 	return res, err
@@ -65,7 +56,7 @@ func (u *UsecaseModul) DeleteData(ctx *fasthttp.RequestCtx, param *mdl.Request) 
 	return res, err
 }
 
-func (u UsecaseModul) ReadSummaryData(ctx *fasthttp.RequestCtx, param *mdl.Request) (mdl.ResponseAll, error) {
+func (u UsecaseModul) ReadSummaryData(ctx *fasthttp.RequestCtx, param *mdl.Request) (mdl.ResponseSummaryAll, error) {
 	res, err := u.Repo.GetSummaryData(ctx, param)
 	if err != nil {
 		u.logger.Error(fmt.Sprintf("usecase.usecase.ReadData: %v", err.Error()))
@@ -76,5 +67,33 @@ func (u UsecaseModul) ReadSummaryData(ctx *fasthttp.RequestCtx, param *mdl.Reque
 		res.TotalHarga = res.TotalHarga + val.Harga
 	}
 
+	return res, err
+}
+
+func (u *UsecaseModul) Payment(ctx *fasthttp.RequestCtx, param *mdl.Request) (mdl.ResponseAll, error) {
+	var res mdl.ResponseAll
+	p, err := u.ReadSummaryData(ctx, param)
+	if err != nil {
+		u.logger.Error(fmt.Sprintf("usecase.usecase.Payment: %v", err.Error()))
+		return res, err
+	}
+	u.logger.Info("checking user_id")
+	if param.UserId != p.Data[0].UserId {
+		errv := errors.New("user_id invalid")
+		u.logger.Error(fmt.Sprintf("usecase.usecase.Payment: %v", errv.Error()))
+		return res, errv
+	}
+	u.logger.Info("checking payment account")
+	if param.PaymentAccount != p.TotalHarga {
+		errv := errors.New("payment account invalid")
+		u.logger.Error(fmt.Sprintf("usecase.usecase.Payment: %v", errv.Error()))
+		return res, errv
+	}
+	err = u.Repo.Payment(ctx, param)
+	if err != nil {
+		u.logger.Error(fmt.Sprintf("usecase.usecase.Payment: %v", err.Error()))
+		return res, err
+	}
+	u.logger.Info("success payment")
 	return res, err
 }

@@ -1,0 +1,1848 @@
+{
+	"info": {
+		"_postman_id": "7115d19e-f3fc-48eb-a467-4fff9a13d189",
+		"name": "ticketing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\" : \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30001/api/user",
+							"host": [
+								"localhost"
+							],
+							"port": "30001",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Users",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"user_id\" : \"test\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/user",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:05:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "182"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success retrieve data\",\n    \"data\": [\n        {\n            \"user_id\": \"test\",\n            \"username\": \"test name #1\",\n            \"created_at\": \"2022-04-07T17:48:08+07:00\",\n            \"updated_at\": \"2022-04-07T17:55:09+07:00\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get All Users",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"user_id\" : \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/user",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:07:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "282"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success retrieve data\",\n    \"data\": [\n        {\n            \"user_id\": \"test\",\n            \"username\": \"test name #1\",\n            \"created_at\": \"2022-04-07T17:48:08+07:00\",\n            \"updated_at\": \"2022-04-07T17:55:09+07:00\"\n        },\n        {\n            \"user_id\": \"test 2\",\n            \"username\": \"test dua\",\n            \"created_at\": \"2022-04-09T09:07:26+07:00\",\n            \"updated_at\": \"\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\" : \"test 2\",\n\t\"username\": \"test dua\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30001/api/user/add",
+							"host": [
+								"localhost"
+							],
+							"port": "30001",
+							"path": [
+								"api",
+								"user",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"user_id\" : \"test 2\",\n\t\"username\": \"test dua\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/user/add",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"user",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:07:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success create data\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\" : \"test 2\",\n\t\"username\": \"test dua #update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30001/api/user/update",
+							"host": [
+								"localhost"
+							],
+							"port": "30001",
+							"path": [
+								"api",
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update User",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"user_id\" : \"test 2\",\n\t\"username\": \"test dua #update\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/user/update",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"user",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:09:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success update data\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_id\" : \"test 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30001/api/user/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "30001",
+							"path": [
+								"api",
+								"user",
+								"delete"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete User",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"user_id\" : \"test 2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/user/delete",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"user",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:09:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success delete data\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ticket",
+			"item": [
+				{
+					"name": "Get Ticket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ticket_id\" : \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30001/api/ticket",
+							"host": [
+								"localhost"
+							],
+							"port": "30001",
+							"path": [
+								"api",
+								"ticket"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Ticket",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"ticket_id\" : \"ticket2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/ticket",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"ticket"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:10:32 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "168"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success retrieve data\",\n    \"data\": [\n        {\n            \"ticket_id\": \"ticket2\",\n            \"acara\": \"acara2\",\n            \"harga\": 200000,\n            \"created_at\": \"2022-04-08T08:40:20+07:00\",\n            \"updated_at\": \"\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get All Ticket",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"ticket_id\" : \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/ticket",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"ticket"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:10:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "306"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success retrieve data\",\n    \"data\": [\n        {\n            \"ticket_id\": \"ticket1\",\n            \"acara\": \"acara1\",\n            \"harga\": 100000,\n            \"created_at\": \"2022-04-07T23:23:56+07:00\",\n            \"updated_at\": \"2022-04-08T08:24:25+07:00\"\n        },\n        {\n            \"ticket_id\": \"ticket2\",\n            \"acara\": \"acara2\",\n            \"harga\": 200000,\n            \"created_at\": \"2022-04-08T08:40:20+07:00\",\n            \"updated_at\": \"\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Ticket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ticket_id\" : \"ticket3\",\n\t\"acara\": \"acara3\",\n\t\"harga\": 500000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30001/api/ticket/add",
+							"host": [
+								"localhost"
+							],
+							"port": "30001",
+							"path": [
+								"api",
+								"ticket",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Ticket",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"ticket_id\" : \"ticket3\",\n\t\"acara\": \"acara3\",\n\t\"harga\": 500000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/ticket/add",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"ticket",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:11:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success create data\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Ticket",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ticket_id\" : \"ticket3\",\n\t\"acara\": \"acara3\",\n\t\"harga\": 150000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30001/api/ticket/update",
+							"host": [
+								"localhost"
+							],
+							"port": "30001",
+							"path": [
+								"api",
+								"ticket",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Ticket",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"ticket_id\" : \"ticket3\",\n\t\"acara\": \"acara3\",\n\t\"harga\": 150000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/ticket/update",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"ticket",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:11:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success update data\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Ticket",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ticket_id\" : \"ticket3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30001/api/ticket/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "30001",
+							"path": [
+								"api",
+								"ticket",
+								"delete"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Ticket",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"ticket_id\" : \"ticket3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/ticket/delete",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"ticket",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:12:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success delete data\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "checkout",
+			"item": [
+				{
+					"name": "Get Data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 0,\n\t\"user_id\" : \"\",\n\t\"ticket_id\": \"\",\n\t\"checkout_id\": \"c97p4n8g29d03p5kthu0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30001/api/checkout",
+							"host": [
+								"localhost"
+							],
+							"port": "30001",
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Checkout Data by User_id",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 0,\n\t\"user_id\" : \"test\",\n\t\"ticket_id\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/checkout",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"checkout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:14:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1383"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success retrieve data\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"checkout_id\": \"c97oroog29d5kt1b8mvg\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket1\",\n            \"is_purchased\": true,\n            \"created_at\": \"2022-04-08T08:20:35+07:00\",\n            \"updated_at\": \"2022-04-08T17:02:53+07:00\"\n        },\n        {\n            \"id\": 2,\n            \"checkout_id\": \"c97p4n8g29d03p5kthu0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket2\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T08:39:41+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 3,\n            \"checkout_id\": \"c97uv18g29d3o26afpl0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket2\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T15:17:09+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 5,\n            \"checkout_id\": \"c97uv18g29d3o26afpl0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket1\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T15:17:09+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 6,\n            \"checkout_id\": \"c97uv18g29d3o26afpl0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket2\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T17:15:54+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 7,\n            \"checkout_id\": \"c980nnog29d67s49g4i0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket2\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T17:18:07+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 8,\n            \"checkout_id\": \"c980nnog29d67s49g4i0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket1\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T17:18:07+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 9,\n            \"checkout_id\": \"c980nnog29d67s49g4i0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket1\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T17:18:07+07:00\",\n            \"updated_at\": \"\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get Checkout Data by Id",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 1,\n\t\"user_id\" : \"\",\n\t\"ticket_id\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/checkout",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"checkout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:13:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "242"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success retrieve data\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"checkout_id\": \"c97oroog29d5kt1b8mvg\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket1\",\n            \"is_purchased\": true,\n            \"created_at\": \"2022-04-08T08:20:35+07:00\",\n            \"updated_at\": \"2022-04-08T17:02:53+07:00\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get Checkout Data by Ticket_id",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 0,\n\t\"user_id\" : \"\",\n\t\"ticket_id\": \"ticket1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/checkout",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"checkout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:14:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "731"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success retrieve data\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"checkout_id\": \"c97oroog29d5kt1b8mvg\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket1\",\n            \"is_purchased\": true,\n            \"created_at\": \"2022-04-08T08:20:35+07:00\",\n            \"updated_at\": \"2022-04-08T17:02:53+07:00\"\n        },\n        {\n            \"id\": 5,\n            \"checkout_id\": \"c97uv18g29d3o26afpl0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket1\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T15:17:09+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 8,\n            \"checkout_id\": \"c980nnog29d67s49g4i0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket1\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T17:18:07+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 9,\n            \"checkout_id\": \"c980nnog29d67s49g4i0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket1\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T17:18:07+07:00\",\n            \"updated_at\": \"\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get All Checkout Data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 0,\n\t\"user_id\" : \"\",\n\t\"ticket_id\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/checkout",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"checkout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:12:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1383"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success retrieve data\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"checkout_id\": \"c97oroog29d5kt1b8mvg\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket1\",\n            \"is_purchased\": true,\n            \"created_at\": \"2022-04-08T08:20:35+07:00\",\n            \"updated_at\": \"2022-04-08T17:02:53+07:00\"\n        },\n        {\n            \"id\": 2,\n            \"checkout_id\": \"c97p4n8g29d03p5kthu0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket2\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T08:39:41+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 3,\n            \"checkout_id\": \"c97uv18g29d3o26afpl0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket2\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T15:17:09+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 5,\n            \"checkout_id\": \"c97uv18g29d3o26afpl0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket1\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T15:17:09+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 6,\n            \"checkout_id\": \"c97uv18g29d3o26afpl0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket2\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T17:15:54+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 7,\n            \"checkout_id\": \"c980nnog29d67s49g4i0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket2\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T17:18:07+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 8,\n            \"checkout_id\": \"c980nnog29d67s49g4i0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket1\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T17:18:07+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 9,\n            \"checkout_id\": \"c980nnog29d67s49g4i0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket1\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T17:18:07+07:00\",\n            \"updated_at\": \"\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get Checkout Data by Checkout_id",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 0,\n\t\"user_id\" : \"\",\n\t\"ticket_id\": \"\",\n\t\"checkout_id\": \"c980nnog29d67s49g4i0\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/checkout",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"checkout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:16:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "544"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success retrieve data\",\n    \"data\": [\n        {\n            \"id\": 7,\n            \"checkout_id\": \"c980nnog29d67s49g4i0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket2\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T17:18:07+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 8,\n            \"checkout_id\": \"c980nnog29d67s49g4i0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket1\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T17:18:07+07:00\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"id\": 9,\n            \"checkout_id\": \"c980nnog29d67s49g4i0\",\n            \"user_id\": \"test\",\n            \"ticket_id\": \"ticket1\",\n            \"is_purchased\": false,\n            \"created_at\": \"2022-04-08T17:18:07+07:00\",\n            \"updated_at\": \"\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Summary Data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 0,\n\t\"user_id\" : \"test\",\n\t\"checkout_id\": \"c980nnog29d67s49g4i0\",\n\t\"is_purchased\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30001/api/checkout/summary",
+							"host": [
+								"localhost"
+							],
+							"port": "30001",
+							"path": [
+								"api",
+								"checkout",
+								"summary"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Checkout Summary Data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 0,\n\t\"user_id\" : \"test\",\n\t\"checkout_id\": \"c980nnog29d67s49g4i0\",\n\t\"is_purchased\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/checkout/summary",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"checkout",
+										"summary"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:17:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "412"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success retrieve data\",\n    \"data\": [\n        {\n            \"checkout_id\": \"c980nnog29d67s49g4i0\",\n            \"user_id\": \"test\",\n            \"username\": \"test name #1\",\n            \"ticket_id\": \"ticket2\",\n            \"acara\": \"acara2\",\n            \"harga\": 200000,\n            \"created_at\": \"\",\n            \"updated_at\": \"\"\n        },\n        {\n            \"checkout_id\": \"c980nnog29d67s49g4i0\",\n            \"user_id\": \"test\",\n            \"username\": \"test name #1\",\n            \"ticket_id\": \"ticket1\",\n            \"acara\": \"acara1\",\n            \"harga\": 200000,\n            \"created_at\": \"\",\n            \"updated_at\": \"\"\n        }\n    ],\n    \"total_harga\": 400000\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"checkout_id\": \"c97p4n8g29d03p5kthu0\",\n\t\"user_id\" : \"test 2\",\n\t\"ticket_id\": [\"ticket2\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30001/api/checkout/add",
+							"host": [
+								"localhost"
+							],
+							"port": "30001",
+							"path": [
+								"api",
+								"checkout",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Checkout Data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"checkout_id\": \"\",\n\t\"user_id\" : \"test 2\",\n\t\"ticket_id\": [\"ticket2\", \"ticket1\", \"ticket1\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/checkout/add",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"checkout",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:18:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success create data\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Update Checkout Data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"checkout_id\": \"c97p4n8g29d03p5kthu0\",\n\t\"user_id\" : \"test 2\",\n\t\"ticket_id\": [\"ticket2\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/checkout/add",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"checkout",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:19:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success create data\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"checkout_id\" : \"c97p4n8g29d03p5kthu0\",\n\t\"payment_account\" : 200000,\n\t\"user_id\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30001/api/checkout/payment",
+							"host": [
+								"localhost"
+							],
+							"port": "30001",
+							"path": [
+								"api",
+								"checkout",
+								"payment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Payment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"checkout_id\" : \"c97p4n8g29d03p5kthu0\",\n\t\"payment_account\" : 200000,\n\t\"user_id\": \"test\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:30001/api/checkout/payment",
+									"host": [
+										"localhost"
+									],
+									"port": "30001",
+									"path": [
+										"api",
+										"checkout",
+										"payment"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Apr 2022 02:22:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Content-Length"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"success payment\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Data",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30001/api/checkout/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "30001",
+							"path": [
+								"api",
+								"checkout",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "dab86bf0-b56a-480b-a6d1-6de30032e6e6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6431267e-091b-4192-926f-58ad05b6a427",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
